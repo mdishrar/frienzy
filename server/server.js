@@ -9,7 +9,6 @@ import messageRouter from './Router/messageRouter.js';
 
 // application initiation
 const app = express();
-const PORT = process.env.PORT || 5000;
 const server = http.createServer(app)
 
 export const io = new Server(server,{
@@ -47,6 +46,12 @@ app.use('/api/messages',messageRouter);
 //Database connection
 await connectDB();
 
-server.listen(PORT,()=>{
+if(process.env.NODE_ENV !== 'production'){
+    const PORT = process.env.PORT || 5000;
+    server.listen(PORT,()=>{
     console.log(`listening at http://localhost:${PORT}`);
-})
+    })
+}
+
+export default server;
+    
