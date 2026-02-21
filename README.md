@@ -102,16 +102,22 @@ quickchat/
 ├── client/                   # React frontend
 │   ├── public/
 │   └── src/
-│       ├── assets/          # Images, icons, fonts
-│       ├── components/      # React components
-│       │   ├── ChatArea.js  # Main chat interface
-│       │   ├── Sidebar.js   # User list sidebar
-│       │   └── ...          # Other components
-│       ├── context/         # Context providers
-│       │   ├── AuthContext.js
-│       │   └── ChatContext.js
-│       ├── lib/             # Utilities and helpers
-│       └── pages/           # Page components
+│   │    ├── assets/          # Images, icons, fonts
+│   │    ├── components/      # React components
+│   │    │   ├── ChatArea.jsx  # Main chat interface
+│   │    │   ├── Sidebar.jsx   # User list sidebar
+│   │    │   └── RightSidebar.jsx          # Other components
+│   │    |
+│   │    ├── lib/             # Utilities and helpers
+│   │    └── pages/           # Page components
+│   │
+│   └──Context/  
+│             │
+│             │──AuthContext.jsx
+│             │──ChatContext.jsx
+│             │──AuthProvider.jsx
+│             └──ChatProvider.jsx
+|
 │
 ├── server/                  # Express backend
 │   ├── controllers/         # Route controllers
