@@ -152,7 +152,7 @@ Backend Setup
 
 bash
 
-git clone https://github.com/yourusername/quickchat.git
+git clone https://github.com/mdishrar/quickchat.git
 cd quickchat
 
     Install backend dependencies:
