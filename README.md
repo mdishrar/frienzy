@@ -97,6 +97,7 @@ Backend
 
 📁 Project Structure
 text
+```
 
 quickchat/
 ├── client/                   # React frontend
@@ -134,6 +135,7 @@ quickchat/
 ├── .env.example            # Environment variables template
 ├── package.json            # Dependencies and scripts
 └── README.md              # This file
+```
 
 🛠️ Installation
 Prerequisites
