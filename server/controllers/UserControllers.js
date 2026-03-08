@@ -8,7 +8,7 @@ export const signup = async (req,res) =>{
         const {fullName,email,password,bio} = req.body;
 
         if(!fullName || !email || !password || !bio){
-            res.json({success:false,message : "Please fill all the input fields"})
+            return res.json({success:false,message : "Please fill all the input fields"})
         }
 
         const user = await User.findOne({email});

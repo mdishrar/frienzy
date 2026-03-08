@@ -55,6 +55,7 @@ export const markMessageAsSeen =  async (req,res) =>{
 
 export const sendMessage = async (req,res)=>{
     try{
+        console.log(req.body);
         const {text,image} = req.body;
         const recieverId = req.params.id;
         const senderId = req.user._id;

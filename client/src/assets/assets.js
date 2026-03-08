@@ -25,6 +25,7 @@ import dustbin from './dusbin.png'
 import videoCall from "./videocall.png"
 import microphone from './microphone.png'
 import audioCall from "./audioCall.png"
+import cutVideoCall from "./cutVideoCall.png"
 
 const assets = {
     avatar_icon,
@@ -43,7 +44,8 @@ const assets = {
     dustbin,
     videoCall,
     microphone,
-    audioCall
+    audioCall,
+    cutVideoCall,
 }
 
 export default assets;

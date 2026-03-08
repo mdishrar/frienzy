@@ -25,7 +25,7 @@ const Sidebar = () => {
           <div className='relative py-2 group'>
             <img src={assets.menu_icon} alt='' className='max-h-5 cursor-pointer' />
             <div className='absolute top-full right-0 z-20 w-32 p-5 rounded-md bg-[#282142] border border-gray-600 text-gray-100 hidden group-hover:block'>
-              <p className='cursor-pointer text-sm' onClick={(e)=>navigate('/profile')}>Edit Profile</p>
+              <p className='cursor-pointer text-sm' onClick={()=>navigate('/profile')}>Edit Profile</p>
               <hr className='my-2 border-t border-gray-500'></hr>
               <p className='cursor-pointer text-sm' onClick={()=>logout()}>Logout</p>
             </div>
@@ -39,7 +39,7 @@ const Sidebar = () => {
       <div className='flex flex-col'>
         {filteredUser.map((user,index)=>(
           <div key={index} onClick={()=>setSelectedUser(user)} className={`relative flex items-center gap-2 p-2 pl-4 rounded
-          cursor-pointer max-sm:text-sm ${selectedUser?._id === user._id && 'bg-[#B200ED]/50 rounded-full'}`}>
+          cursor-pointer max-sm:text-sm ${selectedUser?._id === user._id && 'bg-[#B200ED]/80 rounded-full'}`}>
             <img src={user?.profilePic || assets.avatar_icon} alt='' className='w-[35px] aspect-[1/1] rounded-full' />
             <div className='flex flex-col leading-5'>
               <p className='text-sm'>{user.fullName}</p>

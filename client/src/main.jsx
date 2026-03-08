@@ -6,11 +6,12 @@ import {BrowserRouter} from "react-router-dom"
 import AuthProvider from '../Context/AuthProvider.jsx'
 import { ChatProvider } from '../Context/ChatProvider.jsx'
 
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AuthProvider>
       <ChatProvider>
-       <App />
+        <App/>
       </ChatProvider>
     </AuthProvider>
   </BrowserRouter>,

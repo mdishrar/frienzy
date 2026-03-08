@@ -36,6 +36,46 @@ io.on('connection',(socket)=>{
     if(userId) userSocketMap[userId] = socket.id;
     io.emit('getOnlineUsers',Object.keys(userSocketMap));
 
+    socket.on('video-call:join', ({ callId, userId }) => {
+        socket.join(callId);
+        console.log(`User ${userId} joined call: ${callId}`);
+        
+        socket.to(callId).emit('video-call:user-joined', { 
+            userId, 
+            socketId: socket.id 
+        });
+    });
+
+    socket.on('video-call:offer', ({ to, from, offer }) => {
+        console.log(`Offer from ${from} to ${to}`);
+        socket.to(to).emit('video-call:offer', { 
+            from, 
+            offer 
+        });
+    });
+
+    // Handle WebRTC answer
+    socket.on('video-call:answer', ({ to, from, answer }) => {
+        console.log(`Answer from ${from} to ${to}`);
+        socket.to(to).emit('video-call:answer', { 
+            from, 
+            answer 
+        });
+    });
+
+    // Handle ICE candidates
+    socket.on('video-call:ice-candidate', ({ to, candidate }) => {
+        socket.to(to).emit('video-call:ice-candidate', { 
+            candidate 
+        });
+    });
+
+    // Handle call end
+    socket.on('video-call:end', ({ callId, userId }) => {
+        socket.to(callId).emit('video-call:user-left', { userId });
+        socket.leave(callId);
+    });
+
     socket.on('disconnect',()=>{
         console.log('User disconnected' , userId),
         delete userSocketMap[userId];
