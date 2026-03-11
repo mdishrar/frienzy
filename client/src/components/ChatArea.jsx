@@ -22,9 +22,6 @@ const ChatArea = () => {
   const canvasRef = useRef(null);
   const streamRef = useRef(null);
   const navigate = useNavigate();
-  const [dateChange, setDateChange] = useState("");
-  const [monthChange, setMonthChange] = useState("");
-  const [yearChange, setYearChange] = useState("");
 
    function drawWaveform() {
     if (!analyserRef.current || !canvasRef.current){
