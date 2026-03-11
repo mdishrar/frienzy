@@ -97,21 +97,28 @@ Backend
 
 📁 Project Structure
 text
+```
 
 quickchat/
 ├── client/                   # React frontend
 │   ├── public/
 │   └── src/
-│       ├── assets/          # Images, icons, fonts
-│       ├── components/      # React components
-│       │   ├── ChatArea.js  # Main chat interface
-│       │   ├── Sidebar.js   # User list sidebar
-│       │   └── ...          # Other components
-│       ├── context/         # Context providers
-│       │   ├── AuthContext.js
-│       │   └── ChatContext.js
-│       ├── lib/             # Utilities and helpers
-│       └── pages/           # Page components
+│   │    ├── assets/          # Images, icons, fonts
+│   │    ├── components/      # React components
+│   │    │   ├── ChatArea.jsx  # Main chat interface
+│   │    │   ├── Sidebar.jsx   # User list sidebar
+│   │    │   └── RightSidebar.jsx          # Other components
+│   │    |
+│   │    ├── lib/             # Utilities and helpers
+│   │    └── pages/           # Page components
+│   │
+│   └──Context/  
+│             │
+│             │──AuthContext.jsx
+│             │──ChatContext.jsx
+│             │──AuthProvider.jsx
+│             └──ChatProvider.jsx
+|
 │
 ├── server/                  # Express backend
 │   ├── controllers/         # Route controllers
@@ -128,6 +135,7 @@ quickchat/
 ├── .env.example            # Environment variables template
 ├── package.json            # Dependencies and scripts
 └── README.md              # This file
+```
 
 🛠️ Installation
 Prerequisites
@@ -146,7 +154,7 @@ Backend Setup
 
 bash
 
-git clone https://github.com/yourusername/quickchat.git
+git clone https://github.com/mdishrar/quickchat.git
 cd quickchat
 
     Install backend dependencies:
